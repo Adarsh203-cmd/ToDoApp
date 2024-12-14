@@ -1,62 +1,61 @@
 To-Do Application
-
-A simple To-Do application built with Django, designed to help users manage tasks. The project focuses on backend development and exposes basic APIs.
+A simple To-Do application built with Django, designed to help users manage their tasks effectively. This project focuses on backend development and exposes REST APIs for task management.
 
 Features
-
 Task Management:
-
 Add, edit, and delete tasks.
-
 Mark tasks as complete or pending.
-
 Tagging System:
-
-Categorize tasks with tags.
-
-Reuse tags across multiple tasks.
-
+Categorize tasks with reusable tags.
 Due Date Tracking:
-
 Set deadlines for tasks.
-
 View overdue tasks.
-
-REST API Support:
-
-Basic CRUD operations for tasks and tags.
-
+API Support:
+Perform CRUD operations on tasks and tags using REST APIs.
 Tech Stack
-
-Backend: Django (with Django Rest Framework for APIs)
-
-Database: Configured using the Django admin interface (MySql)
-
+Backend: Django (using Django Rest Framework for API development).
+Database: Configured using the Django admin interface (MySQL).
 Installation
+Follow these steps to set up and run the project locally:
 
-1. Clone the repository:
+Clone the repository:
+
+bash
+Copy code
 git clone https://github.com/Adarsh203-cmd/ToDoApp.git
 cd todo-app
+Activate the virtual environment:
 
-2. d activate it: venv\Scripts\activate
+bash
+Copy code
+venv\Scripts\activate  # On Windows
+Install dependencies:
 
-3. Install dependencies: pip install -r requirements.txt
+bash
+Copy code
+pip install -r requirements.txt
+Apply migrations:
 
-4. Apply migrations: python manage.py migrate
+bash
+Copy code
+python manage.py migrate
+Run the development server:
 
-5. Run the development server: python manage.py runserver
+bash
+Copy code
+python manage.py runserver
+Access the application:
 
-6. Access the application at http://127.0.0.1:8000/admin
+Admin interface: http://127.0.0.1:8000/admin
+Credentials:
+Username: admin
+Password: admin@123
+Test APIs using Postman:
 
-superuser:  username: admin
-            password: admin@123
-
-7. user postman for testing:
-      
-      http://127.0.0.1:8000.
-
+Base URL: http://127.0.0.1:8000
 Project Structure
-
+plaintext
+Copy code
 ├── todo_app
 │   ├── settings.py      # Project settings
 │   ├── urls.py          # URL routing
@@ -67,49 +66,29 @@ Project Structure
 ├── requirements.txt     # Python dependencies
 ├── manage.py            # Django management script
 └── README.md            # Project documentation
-
 REST API Endpoints
+The following endpoints are available for managing tasks. If discrepancies exist, refer to urls.py for accurate details.
 
-The following are the intended API endpoints. If discrepancies are found, verify them within the urls.py file.
-
-Method
-
-Endpoint
-
-Description
-
-GET
-
-/api/todoitems/
-
-List all tasks
-
-POST
-
-/api/todoitems/
-
-Create a new task
-
-GET
-
-/api/todoitems/{id}/
-
-Retrieve a specific task
-
-PUT
-
-/api/todoitems/{id}/
-
-Update a specific task
-
-DELETE
-
-/api/todoitems/{id}/
-
-Delete a specific task
-
+Method	Endpoint	Description
+GET	/api/todoitems/	List all tasks
+POST	/api/todoitems/	Create a new task
+GET	/api/todoitems/{id}/	Retrieve a specific task
+PUT	/api/todoitems/{id}/	Update a specific task
+DELETE	/api/todoitems/{id}/	Delete a specific task
+Example API Request:
+bash
+Copy code
+curl -X POST http://127.0.0.1:8000/api/todoitems/ \
+     -H "Content-Type: application/json" \
+     -d '{
+       "title": "Complete the README",
+       "description": "Finalize and polish the README content.",
+       "due_date": "2024-12-31",
+       "status": "pending"
+     }'
 Tests
+Run unit tests using the following command:
 
-Run unit tests: python manage.py test
-
-
+bash
+Copy code
+python manage.py test
