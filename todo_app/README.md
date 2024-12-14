@@ -1,94 +1,69 @@
-To-Do Application
-A simple To-Do application built with Django, designed to help users manage their tasks effectively. This project focuses on backend development and exposes REST APIs for task management.
+# To-Do Application
 
-Features
-Task Management:
-Add, edit, and delete tasks.
-Mark tasks as complete or pending.
-Tagging System:
-Categorize tasks with reusable tags.
-Due Date Tracking:
-Set deadlines for tasks.
-View overdue tasks.
-API Support:
-Perform CRUD operations on tasks and tags using REST APIs.
-Tech Stack
-Backend: Django (using Django Rest Framework for API development).
-Database: Configured using the Django admin interface (MySQL).
-Installation
-Follow these steps to set up and run the project locally:
+A simple To-Do application built with Django, designed to help users manage tasks. The project focuses on backend development and exposes basic APIs.
 
-Clone the repository:
+## Features
 
-bash
-Copy code
-git clone https://github.com/Adarsh203-cmd/ToDoApp.git
-cd todo-app
-Activate the virtual environment:
+- **Task Management**:
+  - Add, edit, and delete tasks.
+  - Mark tasks as complete or pending.
+- **Tagging System**:
+  - Categorize tasks with tags.
+  - Reuse tags across multiple tasks.
+- **Due Date Tracking**:
+  - Set deadlines for tasks.
+  - View overdue tasks.
+- **REST API Support**:
+  - Basic CRUD operations for tasks and tags.
 
-bash
-Copy code
-venv\Scripts\activate  # On Windows
-Install dependencies:
+## Tech Stack
 
-bash
-Copy code
-pip install -r requirements.txt
-Apply migrations:
+- **Backend**: Django (with Django Rest Framework for APIs)
+- **Database**: Configured using the Django admin interface (MySQL)
 
-bash
-Copy code
-python manage.py migrate
-Run the development server:
+## Installation
 
-bash
-Copy code
-python manage.py runserver
-Access the application:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Adarsh203-cmd/ToDoApp.git
+   cd todo-app
+   
+2. Activate the virtual environment:
+   ```bash
+   venv\Scripts\activate
 
-Admin interface: http://127.0.0.1:8000/admin
-Credentials:
-Username: admin
-Password: admin@123
-Test APIs using Postman:
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
 
-Base URL: http://127.0.0.1:8000
-Project Structure
-plaintext
-Copy code
-├── todo_app
-│   ├── settings.py      # Project settings
-│   ├── urls.py          # URL routing
-│   ├── models.py        # Database models
-│   ├── views.py         # View logic
-│   ├── serializers.py   # DRF serializers
-│   └── tests.py         # Unit tests
-├── requirements.txt     # Python dependencies
-├── manage.py            # Django management script
-└── README.md            # Project documentation
-REST API Endpoints
-The following endpoints are available for managing tasks. If discrepancies exist, refer to urls.py for accurate details.
+4. Apply migrations:
+   ```bash
+   python manage.py migrate
 
-Method	Endpoint	Description
-GET	/api/todoitems/	List all tasks
-POST	/api/todoitems/	Create a new task
-GET	/api/todoitems/{id}/	Retrieve a specific task
-PUT	/api/todoitems/{id}/	Update a specific task
-DELETE	/api/todoitems/{id}/	Delete a specific task
-Example API Request:
-bash
-Copy code
-curl -X POST http://127.0.0.1:8000/api/todoitems/ \
-     -H "Content-Type: application/json" \
-     -d '{
-       "title": "Complete the README",
-       "description": "Finalize and polish the README content.",
-       "due_date": "2024-12-31",
-       "status": "pending"
-     }'
-Tests
-Run unit tests using the following command:
+5. Run the development server:
+   ```bash
+   python manage.py runserver
 
-bash
-Copy code
-python manage.py test
+## Access teh application at http://127.0.0.1:8000/admin
+  - ##superuser credentials:
+  - username: admin
+  - password: admin@123
+
+ 6. Use Postman for API testing: http://127.0.0.1:8000/api/todoitems/
+
+## REST API Endpoints
+ The following are the intended API endpoints. If discrepancies are found, verify them within the urls.py file.
+ 
+| Method | Endpoint             | Description              |
+| ------ | -------------------- | ------------------------ |
+| GET    | `/api/todoitems/`    | List all tasks           |
+| POST   | `/api/todoitems/`    | Create a new task        |
+| GET    | `/api/todoitems/{id}/` | Retrieve a specific task |
+| PUT    | `/api/todoitems/{id}/` | Update a specific task   |
+| DELETE | `/api/todoitems/{id}/` | Delete a specific task   |
+
+
+## Tests
+-Run unit tests:
+   ```bash
+     python manage.py test
