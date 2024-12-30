@@ -30,7 +30,7 @@ A simple To-Do application built with Django, designed to help users manage task
    
 2. Activate the virtual environment:
    ```bash
-   venv\Scripts\activate
+   env\Scripts\activate
 
 3. Install dependencies:
    ```bash
