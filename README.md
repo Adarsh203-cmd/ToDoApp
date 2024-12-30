@@ -62,8 +62,3 @@ A simple backend-focused To-Do application built with Django, showcasing the des
 | PUT    | `/api/todoitems/{id}/` | Update a specific task   |
 | DELETE | `/api/todoitems/{id}/` | Delete a specific task   |
 
-
-## Tests
--Run unit tests:
-   ```bash
-     python manage.py test
