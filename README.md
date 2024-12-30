@@ -1,6 +1,6 @@
-# To-Do Application
+# To-Do Application: API-Driven Task Management System
 
-A simple To-Do application built with Django, designed to help users manage tasks. The project focuses on backend development and exposes basic APIs.
+A simple backend-focused To-Do application built with Django, showcasing the design and implementation of REST APIs for task management. This project demonstrates backend development skills and serves as a foundation for potential frontend integration.
 
 ## Features
 
